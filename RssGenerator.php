@@ -85,7 +85,7 @@ class RssGenerator
     {
         $itemConfigs = $this->configs['item'];
 
-        $entities = $this->em->getRepository($itemConfigs['entity'])->listAll(1, 10);
+        $entities = $this->em->getRepository($itemConfigs['entity'])->findAll(1, 10);
 
         $itemTags = array('title', 'link', 'description', 'pubDate', 'guid', 'author');
         foreach ($entities as $entity) {
